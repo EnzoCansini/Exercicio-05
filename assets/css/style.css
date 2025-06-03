@@ -19,9 +19,9 @@
     --theme1-key-text: hsl(221, 14%, 31%);
 
     /*tema 2(Padraozin) */
-    --theme2-bg: hsl(222, 26%, 31%);
-    --theme2-keypad-bg: hsl(223, 31%, 20%);
-    --theme2-screen-bg: hsl(224, 36%, 15%);
+    --theme2-bg: url(/Exercicio-05/assets/img/Jujutsu-Kaisen-Gojo.jpg);
+    --theme2-keypad-bg: hsl(271, 100%, 23%);
+    --theme2-screen-bg: hsl(278, 100%, 50%);
     --theme2-key-bg: hsl(30, 25%, 89%);
     --theme2-key-shadow: hsl(28, 16%, 65%);
     --theme2-action-bg: hsl(225, 21%, 49%);
@@ -44,16 +44,6 @@
     --theme3-text: hsl(0, 0%, 100%);
     --theme3-key-text: hsl(221, 14%, 31%);
 }
-body{
-    font-family: 'League Spartan', sans-serif;
-    background-color: var(--theme1-bg);
-    color: var(--theme1-text);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0,3s ease;
-}
 .header{
     display: flex;
     width: 415px;
@@ -66,9 +56,21 @@ span{
     align-self: flex-end;
     margin: 5px;
 }
+body{
+    font-family: 'League Spartan', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0,3s ease;
+}
+.result{
+    margin-right: 10px;
+    font-size: 40px;
+    font-weight: bold;
+}
 .theme-toggle{
     display: flex;
-    background-color: var(--theme1-keypad-bg);
     align-self: flex-end;
     margin: 5px;
     height: 20px;
@@ -77,7 +79,6 @@ span{
     align-items: center;
 }
 .toggle-ball{
-    background-color: var(--theme1-equals-bg);
     width: 15px;
     height: 15px;
     border-radius: 10px;
@@ -87,18 +88,14 @@ span{
     display: flex;
     height: 100px;
     width: 415px;
-    background-color: var(--theme1-keypad-bg);
+
     margin-bottom: 20px;
     margin-top: 10px;
     border-radius: 10px;
     justify-content: end;
     align-items: center;
 }
-.result{
-    margin-right: 10px;
-    font-size: 40px;
-    font-weight: bold;
-}
+
 .keypad{
     display: flex;
     justify-content: center;
@@ -106,25 +103,104 @@ span{
     flex-wrap: wrap;
     width: 420px;
     border-radius: 10px;
-    background-color: var(--theme1-keypad-bg);
+    padding: 5px;
 }
 .key{
     margin: 5px;
     width: 90px;
     height: 50px;
     border-radius: 10px;
-    
-}
-.action{
-    background-color: var(--theme1-action-bg);
-    color: var(--theme1-text);
+    cursor: pointer;
 }
 .span-2{
     width: 195px;
+} 
+
+
+body.theme-1{
+    background-color: var(--theme1-bg);
+    color: var(--theme1-text);
+}
+body.theme-1 .key{
+    box-shadow: inset 0px -5px var(--theme1-key-shadow);
+}
+body.theme-1 .display{
+    background-color: var(--theme1-keypad-bg);
+}
+body.theme-1 .keypad{
+    background-color: var(--theme1-keypad-bg);
+}
+body.theme-1 .theme-toggle {
+    background-color: var(--theme1-keypad-bg);
+}
+body.theme-1 .toggle-ball{
+    background-color: var(--theme1-equals-bg);
+}
+body.theme-1 .span-2{
     background-color: var(--theme1-action-bg);
     color: var(--theme1-text);
-}   
-.equals{
+}
+body.theme-1 .action{
+    background-color: var(--theme1-action-bg);
+    color: var(--theme1-text);
+    box-shadow: inset 0px -5px var(--theme1-action-shadow);
+}
+body.theme-1 .equals{
     background-color: var(--theme1-equals-bg);
     color: var(--theme1-text);
+    box-shadow: inset 0px -5px var(--theme1-equals-shadow);
+}
+body.theme-1 .key:hover{
+    background-color: var(--theme1-key-shadow);
+}
+body.theme-1 .action:hover{
+    background-color: var(--theme1-action-shadow);
+}
+body.theme-1 .equals:hover{
+    background-color: var(--theme1-equals-shadow);
+}
+
+
+body.theme-2{
+    background-image: var(--theme2-bg);
+    color: var(--theme2-text);
+}
+body.theme-2 .theme-toggle {
+    background-color: var(--theme2-keypad-bg);
+    justify-content: center;
+}
+body.theme-2 .toggle-ball{
+    background-color: var(--theme2-equals-bg);
+}
+body.theme-2.key{
+    box-shadow: inset 0px -5px var(--theme2-key-shadow);
+}
+body.theme-2 .display{
+    background-color: var(--theme2-keypad-bg);
+}
+body.theme-2 .keypad{
+    background-color: var(--theme2-keypad-bg);
+}
+body.theme-2 .span-2{
+    background-color: var(--theme2-action-bg);
+    color: var(--theme2-text);
+}
+body.theme-2 .action{
+    background-color: var(--theme2-action-bg);
+    color: var(--theme2-text);
+    box-shadow: inset 0px -5px var(--theme2-action-shadow);
+}
+body.theme-2 .equals{
+    background-color: var(--theme2-equals-bg);
+    color: var(--theme2-text);
+    box-shadow: inset 0px -5px var(--theme1-equals-shadow);
+}
+body.theme-2 .key:hover{
+    background-color: var(--theme2-key-shadow);
+}
+body.theme-2 .action:hover{
+    background-color: var(--theme2-action-shadow);
+}
+body.theme-2 .equals:hover{
+    background-color: var(--theme2-equals-shadow);
 }
