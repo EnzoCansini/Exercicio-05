@@ -19,9 +19,12 @@ const igual = document.querySelector(".equals")
 const del = document.querySelector(".action")
 const reset = document.querySelector(".span-2")
 const tela = document.querySelector(".result")
-let deixei = 0
 let limpar = 0
-console.log(deixei)
+let comprimento = 0
+
+
+telinha = tela.textContent
+
 
 operador.forEach(button => {
     button.addEventListener("click", ()=> {
@@ -51,41 +54,48 @@ key.forEach(button => {
 numero.forEach(button => {
     button.addEventListener("click", ()=> {
         const value = button.textContent
+        comprimento = value.length
+        console.log(comprimento)
+        if (value == '.'){
+            const ultimo = tela.textContent.slice(-1)
+            if(ultimo == 'X' || ultimo == '/' || ultimo == '+' || ultimo == '-' || ultimo == '.') {
+                tela.textContent = tela.textContent.slice(0, -1) || 0
+                tela.textContent += value
+            } else {
+                tela.textContent += value
+            }
+        } else{
         if(tela.textContent === "0") {
             tela.textContent = value
         } else {
-        tela.textContent += value}
-        deixei = 1
-        console.log(deixei)
+        tela.textContent += value} 
+        } 
     })
 });
 
 operador.forEach(button => {
     button.addEventListener("click", ()=> {
-        if(deixei == 1){
         const value = button.textContent
-
-        tela.textContent += value
-        deixei = 0
-        console.log(deixei)
-    } else {
+        const ultimo = tela.textContent.slice(-1)
+        console.log(ultimo)
+if(ultimo == 'X' || ultimo == '/' || ultimo == '+' || ultimo == '-' || ultimo == '.'){
         tela.textContent = tela.textContent.slice(0, -1) || 0
-        const value = button.textContent
-
         tela.textContent += value
-        deixei = 0
-    }
+} else {
+        tela.textContent += value
+}
     })
 });
 
 igual.addEventListener("click", ()=> {
-    if(deixei == 0){tela.textContent = tela.textContent.slice(0, -1) || 0}
+const ultimo = tela.textContent.slice(-1)
+if(ultimo == 'X' || ultimo == '/' || ultimo == '+' || ultimo == '-' || ultimo == '.'){tela.textContent = tela.textContent.slice(0, -1) || 0}
     try{
     const resultado = eval(tela.textContent.replace("X", "*"))
     tela.textContent = resultado
     } catch {
         tela.textContent = "erro"
-    } deixei = 1
+    }
     limpar = 1
     })
 
