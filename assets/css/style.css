@@ -18,16 +18,16 @@
     --theme1-text: hsl(0, 0%, 100%);
     --theme1-key-text: hsl(221, 14%, 31%);
 
-    /*tema 2(Padraozin) */
+    /*tema 2(Gojo) */
     --theme2-bg: url(/Exercicio-05/assets/img/Jujutsu-Kaisen-Gojo.jpg);
     --theme2-keypad-bg: hsl(271, 100%, 23%);
     --theme2-screen-bg: hsl(278, 100%, 50%);
-    --theme2-key-bg: hsl(30, 25%, 89%);
-    --theme2-key-shadow: hsl(28, 16%, 65%);
-    --theme2-action-bg: hsl(225, 21%, 49%);
-    --theme2-action-shadow: hsl(224, 28%, 35%);
-    --theme2-equals-bg: hsl(6, 63%, 50%);
-    --theme2-equals-shadow: hsl(6, 70%, 34%);
+    --theme2-key-bg: hsl(292, 53%, 83%);
+    --theme2-key-shadow: hsl(261, 26%, 32%);
+    --theme2-action-bg: hsl(288, 100%, 47%);
+    --theme2-action-shadow: hsl(281, 28%, 35%);
+    --theme2-equals-bg: hsl(244, 100%, 50%);
+    --theme2-equals-shadow: hsl(231, 58%, 30%);
     --theme2-text: hsl(0, 0%, 100%);
     --theme2-key-text: hsl(221, 14%, 31%);
 
@@ -193,7 +193,7 @@ body.theme-2 .action{
 body.theme-2 .equals{
     background-color: var(--theme2-equals-bg);
     color: var(--theme2-text);
-    box-shadow: inset 0px -5px var(--theme1-equals-shadow);
+    box-shadow: inset 0px -5px var(--theme2-equals-shadow);
 }
 body.theme-2 .key:hover{
     background-color: var(--theme2-key-shadow);

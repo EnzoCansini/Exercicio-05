@@ -20,7 +20,25 @@ const del = document.querySelector(".action")
 const reset = document.querySelector(".span-2")
 const tela = document.querySelector(".result")
 let deixei = 0
+let limpar = 0
 console.log(deixei)
+
+operador.forEach(button => {
+    button.addEventListener("click", ()=> {
+        if(limpar == 1) {
+            limpar = 0
+        }
+    })
+})
+
+numero.forEach(button => {
+    button.addEventListener("click", ()=> {
+        if(limpar == 1) {
+            tela.textContent = 0
+            limpar = 0
+        }
+    })
+})
 
 key.forEach(button => {
     button.addEventListener("click", ()=> {
@@ -68,6 +86,7 @@ igual.addEventListener("click", ()=> {
     } catch {
         tela.textContent = "erro"
     } deixei = 1
+    limpar = 1
     })
 
 reset.addEventListener("click", ()=> {
