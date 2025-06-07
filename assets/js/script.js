@@ -20,10 +20,6 @@ const del = document.querySelector(".action")
 const reset = document.querySelector(".span-2")
 const tela = document.querySelector(".result")
 let limpar = 0
-let comprimento = 0
-
-
-telinha = tela.textContent
 
 
 operador.forEach(button => {
@@ -36,7 +32,7 @@ operador.forEach(button => {
 
 numero.forEach(button => {
     button.addEventListener("click", ()=> {
-        if(limpar == 1) {
+        if(limpar == 1) {''
             tela.textContent = 0
             limpar = 0
         }
@@ -54,8 +50,6 @@ key.forEach(button => {
 numero.forEach(button => {
     button.addEventListener("click", ()=> {
         const value = button.textContent
-        comprimento = value.length
-        console.log(comprimento)
         if (value == '.'){
             const ultimo = tela.textContent.slice(-1)
             if(ultimo == 'X' || ultimo == '/' || ultimo == '+' || ultimo == '-' || ultimo == '.') {

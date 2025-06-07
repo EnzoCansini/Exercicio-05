@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: transform 0.5s ease, background-color 0.5s ease;
 }
 
 :root{
@@ -46,7 +47,7 @@
 }
 .header{
     display: flex;
-    width: 415px;
+    width: 415px; 
     justify-content: space-between;
 }
 .theme-switcher{
@@ -73,7 +74,7 @@ body{
     display: flex;
     align-self: flex-end;
     margin: 5px;
-    height: 20px;
+    height: 21px;
     width: 60px;
     border-radius: 10px;
     align-items: center;
@@ -83,6 +84,8 @@ body{
     height: 15px;
     border-radius: 10px;
     margin: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 .display{
     display: flex;
